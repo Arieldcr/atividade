@@ -1,70 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Portfólio - Ariel de Carvlho</title>
-    </head>
 
-    <body>
-        <header>
-            <h1>Maria Fernanda</h1>          
-            <p>Nutricionista | Pós-graduanda em Psiconeuronutrição</p>
-            
-            <nav aria-label="Menu Principal">
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#formacao">Formação</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Ariel de Carvalho</title>
 
-        <main>
-            <section id="sobre">
-                <h2>Sobre Maria Fernanda</h2>
-                <article>
-                    <p>Maria Fernanda é nutricionista formada e apaixonada por ajudar pessoas a melhorarem sua alimentação e qualidade de vida.</p>
-                    <p>Atualmente ela iniciou uma pós-graduação em Psiconeuronutrição, área que estuda a relação entre alimentação, cérebro e comportamento.<p>
-                </article>
-            </section>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-            <section id="formacao">
-                <h2>Formação</h2>
-                <ul>
-                    <li>Graduação em Nutrição</li>
-                    <li>Pós-graduação em Psiconeuronutrição (em andamento)</li>
-                </ul>
-            </section>
+<body>
+    <header>
+        <h1>Maria Fernanda</h1>
+        <p>Nutricionista | Pós-graduanda em Neuropsiconutrição</p>
 
-            <section id="contato">
-                <h2>Contato</h2>
-                <form>
+        <nav role="navigation" aria-label="Menu Principal">
+            <ul>
+                <li><a href="#sobre" tabindex="0">Sobre</a></li>
+                <li><a href="#formacao" tabindex="0">Formação</a></li>
+                <li><a href="#contato" tabindex="0">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section id="sobre" aria-labelledby="tituloSobre">
+            <h2 id="tituloSobre">Sobre Maria Fernanda</h2>
+            <article>
+                <img src="image.jpg" alt="Nutricionista atendendo paciente" width="200">
+                <p>Maria Fernanda é nutricionista formada e apaixonada por ajudar pessoas a melhorarem sua alimentação e qualidade de vida.</p>
+                <p>Atualmente ela iniciou uma pós-graduação em Neuropsiconutrição, área que estuda a relação entre alimentação, cérebro e comportamento.
+                </p>
+            </article>
+        </section>
+
+        <section id="formacao" aria-labelledby="tituloFormacao">
+            <h2 id="tituloFormacao">Formação</h2>
+            <ul>
+                <li>Graduação em Nutrição</li>
+                <li>Pós-graduação em Neuropsiconutrição (em andamento)</li>
+            </ul>
+        </section>
+
+        <section id="video" aria-labelledby="tituloVideo">
+            <h2 id="tituloVideo">Vídeo</h2>
+
+            <article>
+
+                <figure>
+
+                    <video controls width="400" aria-label="Vídeo com dicas de nutrição">
+                        <source src="videoplayback.mp4" type="video/mp4">
+                        <track src="legenda.vtt" kind="subtitles" srclang="pt" label="Português" default>
+                    </video>
+
+                    <figcaption>
+                        Vídeo com dicas básicas de alimentação saudável
+                    </figcaption>
+
+                </figure>
+
+            </article>
+
+        </section>
+
+        <section id="contato" aria-labelledby="tituloContato">
+            <h2 id="tituloContato">Contato</h2>
+            <form aria-label="Formulário de contato">
+
+                <fieldset>
+                    <legend>Dados de Contato</legend>
+
                     <p>
                         <label for="nome">Nome:</label><br>
-                        <input type="text" id="nome" name="name">
+                        <input type="text" id="nome" name="name" required pattern="[A-Za-zÀ-ÿ ]{3,}" title="Por favor, insira um nome válido" aria-required="true">
                     </p>
 
                     <p>
                         <label for="email">Email:</label><br>
-                        <input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" required pattern=".+@.+\..+" aria-required="true">
                     </p>
 
                     <p>
                         <label for="mensagem">Mensagem:</label><br>
-                        <textarea id="mensagem" name="mensagem"></textarea>
+                        <textarea id="mensagem" name="mensagem" required aria-required="true"></textarea>
                     </p>
 
-                    <button type="submit">Enviar</button>
-                
-                </form>
+                </fieldset>
 
-            </section>
+                <button type="submit">Enviar</button>
 
-        </main>
+            </form>
 
-        <footer>
-            <p>Portfólio acadêmico de Maria Fernanda</p>
-        </footer>
+        </section>
 
-    </body>
+    </main>
+
+    <footer role="contentinfo">
+        <p>Portfólio acadêmico de Maria Fernanda</p>
+    </footer>
+
+</body>
+
 </html>
